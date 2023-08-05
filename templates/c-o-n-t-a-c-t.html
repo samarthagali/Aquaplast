@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
-    <link rel="stylesheet" href="./global.css" />
-    <link rel="stylesheet" href="./c-o-n-t-a-c-t.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/global.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/c-o-n-t-a-c-t.css') }}">
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inknut Antiqua:wght@700;800&display=swap"
@@ -20,20 +20,20 @@
   </head>
   <body>
     <div class="contact2">
-      <img class="image-10-icon1" alt="" src="./public/image-101@2x.png" />
+      <img class="image-10-icon1" alt="" src="{{ url_for('static', filename='public/image-101@2x.png') }}" />
 
       <b class="behind-aquaplast1">BEHIND AQUAPLAST</b>
       <div class="contact-child6"></div>
       <div class="contact-child7"></div>
       <div class="contact-child8"></div>
       <div class="contact-child9"></div>
-      <img class="contact-child10" alt="" src="./public/ellipse-71@2x.png" />
+      <img class="contact-child10" alt="" src="{{ url_for('static', filename='public/ellipse-71@2x.png') }}" />
 
-      <img class="contact-child11" alt="" src="./public/ellipse-91@2x.png" />
+      <img class="contact-child11" alt="" src="{{ url_for('static', filename='public/ellipse-91@2x.png') }}" />
 
-      <img class="contact-child12" alt="" src="./public/ellipse-101@2x.png" />
+      <img class="contact-child12" alt="" src="{{ url_for('static', filename='public/ellipse-101@2x.png') }}" />
 
-      <img class="contact-child13" alt="" src="./public/ellipse-111@2x.png" />
+      <img class="contact-child13" alt="" src="{{ url_for('static', filename='public/ellipse-111@2x.png') }}" />
 
       <b class="bhavith-p-b1">BHAVITH P B RAO</b>
       <b class="namitha-k1">NAMITHA K</b>
@@ -48,18 +48,18 @@
         <img
           class="icon-instagram-alt-icon1"
           alt=""
-          src="./public/-icon-instagram-alt-icon.svg"
+          src="{{ url_for('static', filename='public/-icon-instagram-alt-icon.svg') }}"
         />
 
-        <img class="icon-whatsapp1" alt="" src="./public/-icon-whatsapp1.svg" />
+        <img class="icon-whatsapp1" alt="" src="{{ url_for('static', filename='public/-icon-whatsapp1.svg') }}" />
 
         <img
           class="icon-rounded-linkedin1"
           alt=""
-          src="./public/-icon-rounded-linkedin.svg"
+          src="{{ url_for('static', filename='public/-icon-rounded-linkedin.svg') }}"
         />
 
-        <img class="icon-email1" alt="" src="./public/-icon-email.svg" />
+        <img class="icon-email1" alt="" src="{{ url_for('static', filename='public/-icon-email.svg') }}" />
 
         <b class="whatsapp1">WHATSAPP</b>
       </div>

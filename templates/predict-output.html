@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Predict Output</title>
-    <link rel="stylesheet" href="predict-output.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/predict-output.css') }}">
 </head>
 <body>
     <div class="title"><h1>Predicted Output</h1></div>
     <b class="back" id="bACKText"><a href="u-p-l-o-a-d.html">BACK</a></b>
     <div class="img-output">
-        <img src="./public/predict-output.jpeg" alt="Predicted Output">
+        <img src="{{ url_for('static', filename='public/predict-output.jpeg') }}" alt="Predicted Output">
     </div>
 </body>
 </html>

@@ -5,3 +5,4 @@ pandas==1.5.0
 Pillow
 folium==0.14
 geopy
+flask

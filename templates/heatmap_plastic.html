@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_3b795c5074f41116e5c064f1d5b98fc4 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+     <div style="position: fixed;
+                 bottom: 50px; left: 50px; width: 150px; height: 100px;
+                 border:2px solid grey; z-index:9999; font-size:14px;
+                 background-color: white;
+                 ">
+     &nbsp; Plastic Count Legend <br>
+     &nbsp; Low Plastic: &lt; 30.0 <i style="background:green;opacity:0.7;"></i><br>
+     &nbsp; High Plastic: &gt;= 30.0 <i style="background:red;opacity:0.7;"></i>
+      </div>
+     
+    
+            <div class="folium-map" id="map_3b795c5074f41116e5c064f1d5b98fc4" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_3b795c5074f41116e5c064f1d5b98fc4 = L.map(
+                "map_3b795c5074f41116e5c064f1d5b98fc4",
+                {
+                    center: [10.895901666666667, 106.69410816666667],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_facfe8fdbee31c1863f9a7d34add052c = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_3b795c5074f41116e5c064f1d5b98fc4);
+        
+    
+            var tile_layer_c7a5a44679e6cae103e0d469660321fb = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_3b795c5074f41116e5c064f1d5b98fc4);
+        
+    
+            var tile_layer_6946cd2c769be2a09c88d0bbfa7a215f = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_3b795c5074f41116e5c064f1d5b98fc4);
+        
+    
+            var heat_map_eddd1dbbd11a17c08ad5c4113c1eb8ee = L.heatLayer(
+                [[10.895866666666668, 106.69370166666668, 20], [10.895878333333334, 106.693555, 24], [10.895928333333334, 106.69471833333331, 34], [10.895973333333334, 106.693735, 31], [10.895793333333334, 106.69527166666668, 27], [10.895791666666666, 106.695335, 40], [10.895963333333333, 106.69390833333334, 22], [10.895868333333333, 106.69363333333334, 20], [10.895976666666666, 106.69366166666669, 20], [10.895976666666666, 106.69356166666668, 22]],
+                {"blur": 15, "maxZoom": 18, "minOpacity": 0.5, "radius": 25}
+            ).addTo(map_3b795c5074f41116e5c064f1d5b98fc4);
+        
+    
+            var layer_control_d520c80a7f7e394bb25e573377858ee0 = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_6946cd2c769be2a09c88d0bbfa7a215f,
+                    "cartodbpositron" : tile_layer_c7a5a44679e6cae103e0d469660321fb,
+                },
+                overlays :  {
+                    "macro_element_eddd1dbbd11a17c08ad5c4113c1eb8ee" : heat_map_eddd1dbbd11a17c08ad5c4113c1eb8ee,
+                },
+            };
+            L.control.layers(
+                layer_control_d520c80a7f7e394bb25e573377858ee0.base_layers,
+                layer_control_d520c80a7f7e394bb25e573377858ee0.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_3b795c5074f41116e5c064f1d5b98fc4);
+            tile_layer_c7a5a44679e6cae103e0d469660321fb.remove();
+            tile_layer_6946cd2c769be2a09c88d0bbfa7a215f.remove();
+        
+    
+            var marker_766c31f6f94d6d8f78998ed26d328897 = L.marker(
+                [10.895866666666668, 106.69370166666668],
+                {}
+            ).addTo(map_3b795c5074f41116e5c064f1d5b98fc4);
+        
+    
+            marker_766c31f6f94d6d8f78998ed26d328897.bindTooltip(
+                `<div>
+                     Plastic Count: 20, Color: Low Plastic
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_bc1ca556f92d1f76031d0393277ca6e7 = L.marker(
+                [10.895878333333334, 106.693555],
+                {}
+            ).addTo(map_3b795c5074f41116e5c064f1d5b98fc4);
+        
+    
+            marker_bc1ca556f92d1f76031d0393277ca6e7.bindTooltip(
+                `<div>
+                     Plastic Count: 24, Color: Low Plastic
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b553447e1985c9d0f8007a4f65b0a104 = L.marker(
+                [10.895928333333334, 106.69471833333331],
+                {}
+            ).addTo(map_3b795c5074f41116e5c064f1d5b98fc4);
+        
+    
+            marker_b553447e1985c9d0f8007a4f65b0a104.bindTooltip(
+                `<div>
+                     Plastic Count: 34, Color: High Plastic
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8c03f8b65fa7b7f34599312a9e60cee7 = L.marker(
+                [10.895973333333334, 106.693735],
+                {}
+            ).addTo(map_3b795c5074f41116e5c064f1d5b98fc4);
+        
+    
+            marker_8c03f8b65fa7b7f34599312a9e60cee7.bindTooltip(
+                `<div>
+                     Plastic Count: 31, Color: High Plastic
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_26ab6f41ce3b0e1ef45541ac5820554c = L.marker(
+                [10.895793333333334, 106.69527166666668],
+                {}
+            ).addTo(map_3b795c5074f41116e5c064f1d5b98fc4);
+        
+    
+            marker_26ab6f41ce3b0e1ef45541ac5820554c.bindTooltip(
+                `<div>
+                     Plastic Count: 27, Color: Low Plastic
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3b05a691b79a13f4b2cc27d40610379a = L.marker(
+                [10.895791666666666, 106.695335],
+                {}
+            ).addTo(map_3b795c5074f41116e5c064f1d5b98fc4);
+        
+    
+            marker_3b05a691b79a13f4b2cc27d40610379a.bindTooltip(
+                `<div>
+                     Plastic Count: 40, Color: High Plastic
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7a489d4c29a59271081887ef3b78fd2d = L.marker(
+                [10.895963333333333, 106.69390833333334],
+                {}
+            ).addTo(map_3b795c5074f41116e5c064f1d5b98fc4);
+        
+    
+            marker_7a489d4c29a59271081887ef3b78fd2d.bindTooltip(
+                `<div>
+                     Plastic Count: 22, Color: Low Plastic
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_17db188a43a7a0bac8d3cb6ade0bfdfc = L.marker(
+                [10.895868333333333, 106.69363333333334],
+                {}
+            ).addTo(map_3b795c5074f41116e5c064f1d5b98fc4);
+        
+    
+            marker_17db188a43a7a0bac8d3cb6ade0bfdfc.bindTooltip(
+                `<div>
+                     Plastic Count: 20, Color: Low Plastic
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_77edc433ac3fd54f570664db3df4a4fc = L.marker(
+                [10.895976666666666, 106.69366166666669],
+                {}
+            ).addTo(map_3b795c5074f41116e5c064f1d5b98fc4);
+        
+    
+            marker_77edc433ac3fd54f570664db3df4a4fc.bindTooltip(
+                `<div>
+                     Plastic Count: 20, Color: Low Plastic
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0a3d5d59e6c2b16f1c112bb47f3fc163 = L.marker(
+                [10.895976666666666, 106.69356166666668],
+                {}
+            ).addTo(map_3b795c5074f41116e5c064f1d5b98fc4);
+        
+    
+            marker_0a3d5d59e6c2b16f1c112bb47f3fc163.bindTooltip(
+                `<div>
+                     Plastic Count: 22, Color: Low Plastic
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
+</html>

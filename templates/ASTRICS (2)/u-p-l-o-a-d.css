@@ -1,0 +1,99 @@
+.image-11-icon1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1485px;
+  height: 1024px;
+  object-fit: cover;
+}
+.upload-child {
+  position: absolute;
+  top: 108px;
+  left: 140px;
+  background-color: var(--color-darkgray);
+  border: 15px solid var(--color-darkslategray);
+  box-sizing: border-box;
+  width: 1160px;
+  height: 548px;
+}
+.upload-child1,
+.upload-inner,
+.upload-item {
+  position: absolute;
+  top: 782px;
+  left: 126px;
+  border-radius: var(--br-31xl);
+  background-color: var(--color-teal-100);
+  width: 295px;
+  height: 83px;
+}
+.upload-child1,
+.upload-inner {
+  left: 572px;
+}
+.upload-child1 {
+  left: 1018px;
+}
+.rectangle-icon {
+  position: absolute;
+  top: 190px;
+  left: 215px;
+  width: 579px;
+  height: 384px;
+  object-fit: cover;
+}
+.upload-child2,
+.upload-child3 {
+  position: absolute;
+  top: 258px;
+  left: 879px;
+  border-radius: var(--br-31xl);
+  background-color: var(--color-dimgray);
+  width: 251px;
+  height: 75px;
+}
+.upload-child3 {
+  top: 437px;
+}
+.heatmap3,
+.submit,
+.upload7 {
+  position: absolute;
+  top: 277px;
+  left: 946px;
+}
+.heatmap3,
+.submit {
+  top: 457px;
+}
+.heatmap3 {
+  top: 803px;
+  left: 199px;
+}
+.back,
+.environment3,
+.prediction1 {
+  position: absolute;
+  top: 803px;
+  left: 607px;
+}
+.back,
+.prediction1 {
+  left: 1073px;
+}
+.back {
+  top: 4.2%;
+  left: 91.46%;
+  cursor: pointer;
+}
+.upload6 {
+  position: relative;
+  background-color: var(--color-gray-500);
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-11xl);
+  color: var(--color-white);
+  font-family: var(--font-inter);
+}

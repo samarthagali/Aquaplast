@@ -34,6 +34,11 @@ def contact():
 def signup():
     return render_template('s-i-g-n-u-p.html')
 
+@app.route('/prediction')
+def prediction():
+    return render_template('predict-output.html')
+
+
 @app.route('/upload',methods=['GET','POST'])
 def predict_datapoint():
     if request.method=='GET':

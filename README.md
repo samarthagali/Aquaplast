@@ -5,3 +5,5 @@ This prototype harnesses spatiotemporal data to create river surroundings heatma
 Git link:https://github.com/samarthagali/plastic_prototype.git
 
 DEMO VIDEO LINK: https://drive.google.com/file/d/1_S25AMaqFqmThIDXYgYxDtJNpCtRYCpK/view?usp=drivesdk 
+
+SLIDE DECK : https://drive.google.com/file/d/1VlYsPn13icM21fAOf-Sl_sKrHb1DkW0V/view?usp=sharing

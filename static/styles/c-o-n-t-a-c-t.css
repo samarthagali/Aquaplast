@@ -1,0 +1,213 @@
+.image-10-icon1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1530px;
+  height: 1045px;
+  object-fit: cover;
+}
+.behind-aquaplast1 {
+  position: absolute;
+  top: 72px;
+  left: 483px;
+  font-size: var(--font-size-31xl);
+  color: var(--color-gray-200);
+  -webkit-text-stroke: 5px #000;
+}
+.contact-child6,
+.contact-child7,
+.contact-child8,
+.contact-child9 {
+  position: absolute;
+  height: 29.3%;
+  width: 20.83%;
+  top: 22.27%;
+  right: 74.03%;
+  bottom: 48.44%;
+  left: 5.14%;
+  border-radius: 50%;
+  background-color: var(--color-gray-600);
+}
+.contact-child7,
+.contact-child8,
+.contact-child9 {
+  right: 50.9%;
+  left: 28.26%;
+  background-color: var(--color-whitesmoke-200);
+}
+.contact-child8,
+.contact-child9 {
+  right: 27.78%;
+  left: 51.39%;
+}
+.contact-child9 {
+  right: 3.96%;
+  left: 75.21%;
+}
+.contact-child10,
+.contact-child11,
+.contact-child12,
+.contact-child13 {
+  position: absolute;
+  height: 26.86%;
+  width: 19.1%;
+  top: 23.44%;
+  bottom: 49.71%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.contact-child10 {
+  right: 74.93%;
+  left: 5.97%;
+  border-radius: 50%;
+}
+.contact-child11,
+.contact-child12,
+.contact-child13 {
+  right: 51.81%;
+  left: 29.1%;
+}
+.contact-child12,
+.contact-child13 {
+  right: 28.68%;
+  left: 52.22%;
+  border-radius: 50%;
+}
+.contact-child13 {
+  right: 4.65%;
+  left: 76.25%;
+}
+.bhavith-p-b1,
+.namitha-k1 {
+  position: absolute;
+  top: 566px;
+  left: 86px;
+  font-family: var(--font-inknut-antiqua);
+}
+.namitha-k1 {
+  left: 458px;
+}
+.samarth-agali1 {
+  margin: 0;
+}
+.cia-shetty1,
+.samarth-agali-prasad-container1 {
+  position: absolute;
+  top: 566px;
+  font-family: var(--font-inknut-antiqua);
+}
+.samarth-agali-prasad-container1 {
+  left: 740px;
+  text-align: center;
+}
+.cia-shetty1 {
+  left: 1162px;
+}
+.contact-child14 {
+  position: absolute;
+  top: 905.56px;
+  left: 1481.97px;
+  background: conic-gradient(
+    from 180deg at 50% 50%,
+    rgba(15, 14, 14, 0) 0deg,
+    #161e20 50.26deg,
+    rgba(58, 82, 87, 0.84) 179.8deg,
+    rgba(57, 79, 84, 0.81) 204.01deg,
+    rgba(15, 14, 14, 0) 360deg,
+    #161e20 410.26deg
+  );
+  width: 1485px;
+  height: 127px;
+  transform: rotate(-179.63deg);
+  transform-origin: 0 0;
+}
+.contact-child15 {
+  position: absolute;
+  top: 896px;
+  left: 0;
+  background-color: #141313;
+  width: 1447px;
+  height: 171px;
+}
+.icon-email1,
+.icon-instagram-alt-icon1,
+.icon-rounded-linkedin1,
+.icon-whatsapp1 {
+  position: absolute;
+  height: 100%;
+  width: 4.21%;
+  top: 0;
+  right: 95.79%;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.icon-email1,
+.icon-rounded-linkedin1,
+.icon-whatsapp1 {
+  right: 63.86%;
+  left: 31.93%;
+}
+.icon-email1,
+.icon-rounded-linkedin1 {
+  right: 31.93%;
+  left: 63.86%;
+}
+.icon-email1 {
+  right: 0;
+  left: 95.79%;
+}
+.component-11,
+.whatsapp1 {
+  position: absolute;
+  top: 20%;
+  left: 39.43%;
+}
+.component-11 {
+  top: 932px;
+  left: 57px;
+  width: 1187px;
+  height: 50px;
+}
+.instagram1 {
+  position: absolute;
+  top: 943px;
+  left: 126px;
+}
+.linkedin1 {
+  top: 942px;
+  left: 898px;
+}
+.back2,
+.email1,
+.linkedin1 {
+  position: absolute;
+}
+.email1 {
+  top: 938px;
+  left: 1272px;
+  display: inline-block;
+  width: 79px;
+  height: 39px;
+}
+.back2 {
+  top: 4.2%;
+  left: 91.46%;
+  font-size: var(--font-size-11xl);
+  cursor: pointer;
+}
+.contact2 {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-6xl);
+  color: var(--color-white);
+  font-family: var(--font-inter);
+}

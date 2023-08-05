@@ -17,13 +17,14 @@ filterwarnings('ignore')
 @app.route('/',methods=['GET','POST'])
 def predict_datapoint():
     if request.method=='GET':
-        return """<form action="." method="post" enctype=multipart/form-data>
-        <input type="file" accept="application/zip" name="data_zip_file" accept="application/zip" required>
-         <button type="submit">Send zip file!</button>
-        </form>"""
+        return render_template('u-p-l-o-a-d.html')
 
     else:
-        file = request.files['data_zip_file']  
+       
+        if 'Upload' not  in  request.files:
+            return Flask.redirect(request.url)
+        file = request.files['Upload']  
+        print(file)
         file_like_object = file.stream._file
         # fname=file_like_object.split(".")[0]  
         with zipfile.ZipFile(file_like_object, 'r') as zip_ref:

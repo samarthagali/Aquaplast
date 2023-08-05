@@ -1,0 +1,97 @@
+.component-21 {
+  position: absolute;
+  height: 6%;
+  width: 14.08%;
+  top: 11.84%;
+  right: 26.82%;
+  bottom: 82.17%;
+  left: 59.1%;
+}
+.component-5-child,
+.component-5-inner,
+.component-5-item {
+  position: absolute;
+  height: 15.58%;
+  width: 19.16%;
+  top: 42.13%;
+  right: 53.54%;
+  bottom: 42.29%;
+  left: 27.3%;
+  border-radius: 50%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.component-5-inner,
+.component-5-item {
+  top: 35.67%;
+  right: 23.47%;
+  bottom: 48.75%;
+  left: 57.38%;
+}
+.component-5-inner {
+  top: 7.4%;
+  right: 24.23%;
+  bottom: 77.02%;
+  left: 56.61%;
+}
+.component-5-child1,
+.component-5-child2 {
+  position: absolute;
+  background-color: var(--color-gainsboro-100);
+}
+.component-5-child1 {
+  height: 5.22%;
+  width: 19.35%;
+  top: 52.8%;
+  right: 23.47%;
+  bottom: 41.98%;
+  left: 57.18%;
+  border-radius: 5px;
+}
+.component-5-child2 {
+  height: 4.05%;
+  width: 21.93%;
+  top: 82.17%;
+  right: 22.89%;
+  bottom: 13.79%;
+  left: 55.17%;
+  border-radius: var(--br-3xs);
+}
+.environment4 {
+  position: absolute;
+  top: 82.17%;
+  left: 57.18%;
+  font-weight: 800;
+}
+.component-5-child3 {
+  position: absolute;
+  height: 4.36%;
+  width: 19.73%;
+  top: 24.53%;
+  right: 23.18%;
+  bottom: 71.11%;
+  left: 57.09%;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-gainsboro-100);
+}
+.heat-map {
+  position: absolute;
+  height: 4.36%;
+  width: 19.25%;
+  top: 24.92%;
+  left: 57.18%;
+  font-weight: 800;
+  color: #120e0e;
+  display: inline-block;
+}
+.component-5 {
+  position: relative;
+  width: 100%;
+  height: 1284px;
+  text-align: center;
+  font-size: var(--font-size-xl);
+  color: var(--color-black);
+  font-family: var(--font-inknut-antiqua);
+}

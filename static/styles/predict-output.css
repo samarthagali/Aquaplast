@@ -1,0 +1,21 @@
+.title{
+    text-align: center;
+    color: lightgreen;
+    font-size: 25px;
+}
+
+.img-output{
+    text-align: center;
+    border: 5px solid lightgreen;
+    border-radius: 10px;
+}
+
+.back{
+    position: absolute;
+  top: 803px;
+  left: 607px;
+  left: 1073px;
+  top: 4.2%;
+  left: 91.46%;
+  cursor: pointer;
+}

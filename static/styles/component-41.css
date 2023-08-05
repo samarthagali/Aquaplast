@@ -1,0 +1,77 @@
+.component-4-child2,
+.component-4-child3 {
+  position: absolute;
+  height: 20.18%;
+  width: 100%;
+  top: 13.42%;
+  right: 0;
+  bottom: 66.4%;
+  left: 0;
+  border-radius: 50%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.component-4-child3 {
+  top: 54.59%;
+  right: -142.5%;
+  bottom: 25.23%;
+  left: 142.5%;
+}
+.component-4-child4,
+.component-4-child5,
+.component-4-child6 {
+  position: absolute;
+  height: 16.83%;
+  width: 86.27%;
+  top: -2.29%;
+  right: -58.75%;
+  bottom: 85.46%;
+  left: 72.48%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.component-4-child5,
+.component-4-child6 {
+  height: 2.23%;
+  width: 47.76%;
+  top: 22.41%;
+  right: -43.25%;
+  bottom: 75.36%;
+  left: 95.49%;
+}
+.component-4-child6 {
+  height: 24.56%;
+  width: 87.51%;
+  top: 32.61%;
+  right: -59.9%;
+  bottom: 42.84%;
+  left: 72.39%;
+}
+.component-4-child7 {
+  position: absolute;
+  height: 7.67%;
+  width: 80%;
+  top: 37.13%;
+  right: 10%;
+  bottom: 55.2%;
+  left: 10%;
+  background-color: var(--color-gainsboro-100);
+}
+.upload8 {
+  position: absolute;
+  top: 37.13%;
+  left: 23.5%;
+  font-weight: 800;
+}
+.component-41 {
+  position: relative;
+  width: 100%;
+  height: 991px;
+  text-align: center;
+  font-size: var(--font-size-xl);
+  color: var(--color-gray-300);
+  font-family: var(--font-inknut-antiqua);
+}

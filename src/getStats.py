@@ -56,15 +56,14 @@ def getPlasticlevel(plastic_datafile):
     plt.title('Average Yearly Plastic Levels')
     plt.xlabel('Year')
     plt.ylabel('Plastic Level')
-
     plt.subplot(3, 2, 6)
     plt.plot(yearly_plastic_sum.index, yearly_plastic_sum.values, marker='o')
     plt.title('Yearly Plastic Levels')
     plt.xlabel('Year')
     plt.ylabel('Plastic Level')
     plt.tight_layout()
-    plt.savefig('../static/graphs.png')
+    plt.savefig('static/public/graphs.png')
 
-input_file = "merged_allimg_predictions_withoutduplicates.csv"
+# input_file = "merged_allimg_predictions_withoutduplicates.csv"
 
-getPlasticlevel(input_file)
+# getPlasticlevel(input_file)

@@ -6,7 +6,7 @@ import zipfile
 
 # from sklearn.preprocessing import StandardScaler
 # from src.pipeline.predict_pipeline import CustomData,PredictPipeline
-# from src.mergeGeotag import pipeline
+from src.mergeGeotag import pipeline
 app=Flask(__name__)
 app.config['MAX_CONTENT_LENGTH']=1024*1024*1024
 filterwarnings('ignore')
@@ -14,17 +14,20 @@ filterwarnings('ignore')
 # @app.route('/')
 # def index():
 #     return render_template('index.html')
+@app.route('/heatmap')
+def heatmap():
+    return render_template('heatmap_plastic.html')
+
 
 @app.route('/',methods=['GET','POST'])
 def predict_datapoint():
     if request.method=='GET':
         return render_template('u-p-l-o-a-d.html')
-
     else:
-       
         if 'Upload' not  in  request.files:
             return Flask.redirect(request.url)
-        file = request.files['Upload']  
+        file = request.files['Upload'] 
+        fname=file.filename.split(".")[0]
         file_like_object = file.stream._file
         print(file_like_object)
         # fname=file_like_object.split(".")[0]  
@@ -36,29 +39,8 @@ def predict_datapoint():
             # Extract the file to the specified directory
                     zip_ref.extract(file_info, path="data")
         print("extracted to data folder")
-        return """ <h1> written to data folder</h1>
-"""
-        
-        # data=CustomData(
-        #     pregnancies=float(request.form.get('pregnancies')),
-        #     glucose=float(request.form.get('glucose')),
-        #     bloodPressure=float(request.form.get('bloodPressure')),
-        #     skinThickness=float(request.form.get('skinThickness')),
-        #     insulin=float(request.form.get('insulin')),
-        #     BMI=float(request.form.get('BMI')),
-        #     diabetesPedigreeFunction=float(request.form.get('diabetesPedigreeFunction')),
-        #     age=float(request.form.get('age'))
-        # )
-        
-        # pred_df=data.get_data_as_data_frame()
-        # print(pred_df)
-        # predict_pipeline=PredictPipeline()
-        # results=predict_pipeline.predict(pred_df)
-        # result = 'Non-Diabetic' if not results else 'Diabetic'
-        # result = result
-        # return render_template('home.html',results=result, table=pred_df.to_html(index=False))
-    
-
+        pipeline(fname)
+        return render_template('u-p-l-o-a-d.html')
 if __name__=="__main__":
     app.run(host="0.0.0.0",debug=True, port='5000')        
 

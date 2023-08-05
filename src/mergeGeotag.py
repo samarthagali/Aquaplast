@@ -3,16 +3,17 @@ import glob
 import os
 import platform
 from ultralytics import YOLO
-import getGeotag
-import get_predict
-import getDatetime
-import gen_heatmap
-import getStats
+from src import getGeotag
+from src import get_predict
+from src import getDatetime
+from src import gen_heatmap
+from src import getStats
 
 def pipeline(dirs):
-    os=platform.system().lower()
-    parent="../data"
-    model=YOLO("../models/train4.onnx",task="detect")
+    ops=platform.system().lower()
+    parent="data/"
+    print(os.getcwd())
+    model=YOLO("models/train4.onnx",task="detect")
     # preds="prediction_"+dirs+".csv"
     preds = "prediction_" + dirs + ".csv"
     geotag="geotag_"+dirs+".csv"
@@ -20,8 +21,8 @@ def pipeline(dirs):
     dirs=parent+dirs+"/"
     imgs=glob.glob(dirs+"*.jpg")
     get_predict.write_to_csv(dirs,model,preds)
-    getGeotag.write_to_csv(imgs,os,geotag)
-    getDatetime.write_to_csv(imgs,os,datetime)
+    getGeotag.write_to_csv(imgs,ops,geotag)
+    getDatetime.write_to_csv(imgs,ops,datetime)
     predict_df=pd.read_csv(preds)
     geotag_df=pd.read_csv(geotag)
     datetime_df=pd.read_csv(datetime)
@@ -41,3 +42,4 @@ def pipeline(dirs):
     if os.path.exists(datetime):
         os.remove(datetime)
     print("written results to "+"merged"+preds)
+

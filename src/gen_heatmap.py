@@ -32,5 +32,5 @@ def gen_heatmap(data):
           folium.Marker([lat, lon], tooltip=f'Plastic Count: {count}, Color: {color_indication}').add_to(mymap)
 
       # Save the map as an HTML file
-      mymap.save('../templates/heatmap_plastic.html')
+      mymap.save('templates/heatmap_plastic.html')
       print("heatmap written to heatmap_plastic.html")  

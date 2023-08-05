@@ -7,12 +7,11 @@ import getGeotag
 import get_predict
 import getDatetime
 import gen_heatmap
+import getStats
 
-
-def pipeline():
+def pipeline(dirs):
     os=platform.system().lower()
     parent="../data"
-    dirs=input("enter predict/test/train:").capitalize()
     model=YOLO("../models/train4.onnx",task="detect")
     # preds="prediction_"+dirs+".csv"
     preds = "prediction_" + dirs + ".csv"
@@ -21,10 +20,6 @@ def pipeline():
     dirs=parent+dirs+"/"
     imgs=glob.glob(dirs+"*.jpg")
     get_predict.write_to_csv(dirs,model,preds)
-
-
-
-
     getGeotag.write_to_csv(imgs,os,geotag)
     getDatetime.write_to_csv(imgs,os,datetime)
     predict_df=pd.read_csv(preds)
@@ -38,10 +33,11 @@ def pipeline():
     merged_df.to_csv('merged'+preds)
     merged_df=pd.read_csv("merged"+preds)
     gen_heatmap.gen_heatmap(merged_df)
-# if os.path.exists(preds):
-#     os.remove(preds)
-# if os.path.exists(geotag):
-#     os.remove(geotag)
-# if os.path.exists(datetime):
-#     os.remove(datetime)
-print("written results to "+"merged"+preds)
+    getStats.getPlasticlevel('merged'+preds)
+    if os.path.exists(preds):
+        os.remove(preds)
+    if os.path.exists(geotag):
+        os.remove(geotag)
+    if os.path.exists(datetime):
+        os.remove(datetime)
+    print("written results to "+"merged"+preds)

@@ -34,6 +34,10 @@ def contact():
 def signup():
     return render_template('s-i-g-n-u-p.html')
 
+@app.route('/environment')
+def environment():
+    return render_template('environment.html')
+
 @app.route('/prediction')
 def prediction():
     return render_template('predict-output.html')

@@ -8,6 +8,7 @@ from src import get_predict
 from src import getDatetime
 from src import gen_heatmap
 from src import getStats
+from src import getWeather
 
 def pipeline(dirs):
     ops=platform.system().lower()
@@ -34,6 +35,7 @@ def pipeline(dirs):
     merged_df.to_csv('merged'+preds)
     merged_df=pd.read_csv("merged"+preds)
     gen_heatmap.gen_heatmap(merged_df)
+    getWeather.get_data(geotag)
     getStats.getPlasticlevel('merged'+preds)
     if os.path.exists(preds):
         os.remove(preds)

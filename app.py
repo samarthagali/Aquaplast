@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 from warnings import filterwarnings
 import zipfile
+
 # from sklearn.preprocessing import StandardScaler
 # from src.pipeline.predict_pipeline import CustomData,PredictPipeline
 # from src.mergeGeotag import pipeline
@@ -24,8 +25,8 @@ def predict_datapoint():
         if 'Upload' not  in  request.files:
             return Flask.redirect(request.url)
         file = request.files['Upload']  
-        print(file)
         file_like_object = file.stream._file
+        print(file_like_object)
         # fname=file_like_object.split(".")[0]  
         with zipfile.ZipFile(file_like_object, 'r') as zip_ref:
     # Iterate through all the files in the zip archive

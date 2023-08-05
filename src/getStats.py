@@ -24,19 +24,7 @@ def getPlasticlevel(plastic_datafile):
     daily_plastic_sum = daily_plastic.sum()
     monthly_plastic_sum = monthly_plastic.sum()
     yearly_plastic_sum = yearly_plastic.sum()
-    
-    # daily_plastic.info()
-    # print(daily_plastic.index)
-    # monthly_plastic.info()
-    # print(monthly_plastic.index)
-    # yearly_plastic.info()
-    # print(yearly_plastic.index)
-
-
-    # Step 5: Draw line charts for each of the resampled data
     plt.figure(figsize=(12, 6))
-
-    # Daily Line Chart
     plt.subplot(3, 2, 1)
     plt.plot(daily_plastic_mean.index, daily_plastic_mean.values, marker='o')
     plt.title('Average Daily Plastic Levels')
@@ -75,7 +63,7 @@ def getPlasticlevel(plastic_datafile):
     plt.xlabel('Year')
     plt.ylabel('Plastic Level')
     plt.tight_layout()
-    plt.savefig('predictions.png')
+    plt.savefig('../static/graphs.png')
 
 input_file = "merged_allimg_predictions_withoutduplicates.csv"
 

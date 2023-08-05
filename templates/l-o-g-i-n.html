@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
-    <link rel="stylesheet" href="./global.css" />
-    <link rel="stylesheet" href="./l-o-g-i-n.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/global.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/l-o-g-i-n.css') }}">
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inknut Antiqua:wght@700;800&display=swap"
@@ -20,7 +20,7 @@
   </head>
   <body>
     <div class="login1">
-      <img class="image-9-icon1" alt="" src="./public/image-9@2x.png" />
+      <img class="image-9-icon1" alt="" src="{{ url_for('static', filename='./public/image-9@2x.png') }}" />
 
       <div class="login-child"></div>
       <div class="login-item"></div>

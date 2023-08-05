@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
-    <link rel="stylesheet" href="./global.css" />
-    <link rel="stylesheet" href="./component-41.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/global.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/component-41.css') }}">
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inknut Antiqua:wght@700;800&display=swap"
@@ -23,20 +23,20 @@
       <img
         class="component-4-child2"
         alt=""
-        src="./public/ellipse-132@2x.png"
+        src="{{ url_for('static', filename='public/ellipse-132@2x.png') }}"
       />
 
       <img
         class="component-4-child3"
         alt=""
-        src="./public/ellipse-152@2x.png"
+        src="{{ url_for('static', filename='public/ellipse-152@2x.png') }}"
       />
 
-      <img class="component-4-child4" alt="" src="./public/arrow-11.svg" />
+      <img class="component-4-child4" alt="" src="{{ url_for('static', filename='public/arrow-11.svg') }}" />
 
-      <img class="component-4-child5" alt="" src="./public/arrow-21.svg" />
+      <img class="component-4-child5" alt="" src="{{ url_for('static', filename='public/arrow-21.svg') }}" />
 
-      <img class="component-4-child6" alt="" src="./public/arrow-31.svg" />
+      <img class="component-4-child6" alt="" src="{{ url_for('static', filename='public/arrow-31.svg') }}" />
 
       <div class="component-4-child7"></div>
       <div class="upload8">UPLOAD</div>

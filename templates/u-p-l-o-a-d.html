@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/global.css') }}">
-
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/u-p-l-o-a-d.css') }}">
     <link
       rel="stylesheet"
@@ -27,18 +26,17 @@
       <div class="upload-item"></div>
       <div class="upload-inner"></div>
       <div class="upload-child1"></div>
-      <img class="rectangle-icon" alt="" src="./public/rectangle-33@2x.png" />
+      <img class="rectangle-icon" alt="" src="{{ url_for('static', filename='public/rectangle-33@2x.png') }}" />
 
       <div class="upload-child2"></div>
       <div class="upload-child3"></div>
       <!-- <b class="upload7">UPLOAD_UPLOAD</b> -->
-      <form action="/" method="post" enctype=multipart/form-data>
+      <form action="/" method="post">
         <input class="upload7" type="file" name="Upload" id="upload">
         <input class="submit" type="submit" name="Submit" id="submit">
         <b class="back" id="bACKText">BACK</b>
       </form>
-      <a href=heatmap>
-      <button class="heatmap3" type="submit"  >HeatMap</button></a>
+      <button class="heatmap3" type="submit">HeatMap</button>
       <button class="environment3" type="submit">Environment</button>
       <a href="predict-output.html"><button class="prediction1" type="submit">Prediction</button></a>
       

@@ -30,7 +30,7 @@
       <b class="dont-have-an" id="dONTHAVEAN"
         >DON’T HAVE AN ACCOUNT ? SIGN UP</b
       >
-      <b class="back4" id="bACKText">BACK</b>
+      <b class="back4" id="bACKText">BACK<a href="/"></a></b>
       <b class="login2">LOGIN</b>
     </div>
 
@@ -38,14 +38,13 @@
       var dONTHAVEAN = document.getElementById("dONTHAVEAN");
       if (dONTHAVEAN) {
         dONTHAVEAN.addEventListener("click", function (e) {
-          window.location.href = "./s-i-g-n-u-p.html";
+          window.location.href = "signup";
         });
       }
-      
       var bACKText = document.getElementById("bACKText");
       if (bACKText) {
         bACKText.addEventListener("click", function (e) {
-          window.location.href = "./main.html";
+          window.location.href = "/";
         });
       }
       </script>

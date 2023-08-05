@@ -18,8 +18,23 @@ filterwarnings('ignore')
 def heatmap():
     return render_template('heatmap_plastic.html')
 
+@app.route('/login')
+def login():
+    return render_template('l-o-g-i-n.html')
 
-@app.route('/',methods=['GET','POST'])
+@app.route('/')
+def main():
+    return render_template('main.html')
+
+@app.route('/contact')
+def contact():
+    return render_template('c-o-n-t-a-c-t.html')
+
+@app.route('/signup')
+def signup():
+    return render_template('s-i-g-n-u-p.html')
+
+@app.route('/upload',methods=['GET','POST'])
 def predict_datapoint():
     if request.method=='GET':
         return render_template('u-p-l-o-a-d.html')

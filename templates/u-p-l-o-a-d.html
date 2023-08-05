@@ -21,7 +21,6 @@
   <body>
     <div class="upload6">
       <img class="image-11-icon1" alt="" src="{{ url_for('static', filename='public/rectangle-33@2x.png') }}"> />
-
       <div class="upload-child"></div>
       <div class="upload-item"></div>
       <div class="upload-inner"></div>
@@ -31,22 +30,21 @@
       <div class="upload-child2"></div>
       <div class="upload-child3"></div>
       <!-- <b class="upload7">UPLOAD_UPLOAD</b> -->
-      <form action="/" method="post">
+      <form action="#" method="post" enctype=multipart/form-data>
         <input class="upload7" type="file" name="Upload" id="upload">
         <input class="submit" type="submit" name="Submit" id="submit">
-        <b class="back" id="bACKText">BACK</b>
+        <b class="back" id="bACKText">BACK<a href="/"></a></b>
       </form>
-      <button class="heatmap3" type="submit">HeatMap</button>
+      <a href="heatmap">
+      <button class="heatmap3" type="submit">HeatMap</button></a>
       <button class="environment3" type="submit">Environment</button>
       <a href="predict-output.html"><button class="prediction1" type="submit">Prediction</button></a>
-      
     </div>
-
     <script>
       var bACKText = document.getElementById("bACKText");
       if (bACKText) {
         bACKText.addEventListener("click", function (e) {
-          window.location.href = "./main.html";
+          window.location.href = "/";
         });
       }
       </script>

@@ -1,57 +1,231 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/global.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inknut Antiqua:wght@700;800&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Lalezar:wght@400&display=swap"
-    />
-  </head>
-  <body>
-    <div class="upload1">
-      <div class="desktop-6">
-        <img class="image-11-icon" alt="" src="{{ url_for('static', filename='public/image-11@2x.png') }}" />
+<html lang="en" dir="ltr">
 
-        <div class="desktop-6-inner">
-          <div class="frame-child"></div>
+<head>
+  <meta charset="utf-8">
+
+  <title>AquaPlast</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:wght@700&family=Bangers&family=Kalam:wght@700&family=Rubik+80s+Fade&family=Rubik+Dirt&family=Vina+Sans&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:wght@700&family=Bangers&family=Kalam:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/styling.css', v='1') }}">
+  <script src="https://kit.fontawesome.com/309dcbded0.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;900&family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rajdhani:wght@400;700&family=Sansita:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <script>
+    function validateFile() {
+        
+        const fileInput = document.getElementById('Upload');  
+        const fileError = document.getElementById('file-error');
+
+        if (fileInput.files.length === 0) {
+            fileError.textContent = 'Please select a file.';
+        } else {
+            const fileName = fileInput.files[0].name;
+            if (!fileName.endsWith('.zip')) {
+                fileError.textContent = 'Please upload a valid ZIP file.';
+                fileError.style="color:Red"
+                fileInput.value = ''; // Clear the file input
+            } else {
+                fileError.textContent = 'Drag your files here or click in this area.';
+                fileError.style="color:Black";
+            }
+        }
+    }
+    
+    function enableButtons() {
+      setTimeout(() => {
+  console.log("Delay");
+}, "10000");
+        document.getElementById("heatmap-btn").disabled = false;
+        document.getElementById("heatmap-btn").style = "color:white";
+        document.getElementById("env-btn").disabled = false;
+        document.getElementById("env-btn").style = "color:white";
+        document.getElementById("stats-btn").disabled = false;
+        document.getElementById("stats-btn").style = "color:white";
+    }
+    
+  </script>
+
+
+</head>
+
+
+<body>
+  <section id="title">
+    <div class="container-fluid">
+
+
+
+      <!-- Nav Bar -->
+      <nav class="navbar navbar-expand-lg navbar-light ">
+        <a class="navbar-brand" href=""><img class="logo" src="{{ url_for('static', filename='public/AquaPlast_Logo.jpeg') }}" alt="logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#features">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#upload">Upload</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#footer">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login"><button type="button" class="btn btn-danger">Sign In</button></a>
+            </li>
+
+          </ul>
         </div>
-        <img
-          class="desktop-6-child"
-          alt=""
-          src="{{ url_for('static', filename='public/rectangle-33@2x.png') }}"
-        />
+      </nav>
 
-        <button class="button">
-          <div class="upload-wrapper">
-            <b class="upload2">UPLOAD</b>
-          </div>
-        </button>
-        <button class="button1">
-          <div class="upload-wrapper">
-            <b class="upload2">SUBMIT</b>
-          </div>
-        </button>
-        <button class="heatmap">
-          <b class="heatmap1">HEATMAP</b>
-        </button>
-        <button class="predict">
-          <b class="heatmap1">PREDICT</b>
-        </button>
-        <button class="environment">
-          <b class="heatmap1">ENVIRONMENT</b>
-        </button>
+
+      <!-- Title -->
+
+      <div class="row">
+        <div class="col-lg-6">
+          <h1 class="big-heading">AquaPlast</h1>
+          <hr>
+          <p class="small-heading">Clear Horizons, Clean Waters:
+             Uniting Against Plastic Pollution
+          </p>
+
+          <pre><p style="color: azure;">#FlowWithoutPlastic    #PlasticDetoxWaves </p></pre>
+          
+
+        </div>
+        <div class="col-lg-6">
+          <img class="title-image" src="{{ url_for('static', filename='public/Front_image.png' )}}" >
+        </div>
       </div>
     </div>
-  </body>
+
+  </section>
+</div>
+
+
+
+  <!-- Features -->
+
+  <section id="features">
+    <div class="container-fluid">
+      <div class="container-fluid">
+        <h1>This is our collaborative process in action!</h1>
+        <div class="row">
+
+          <a href="#upload">
+          <div class="feature-box col-lg-4">
+            <img class="fim" src="{{ url_for('static', filename='public/heatmap.jpeg') }}" alt="eto" >
+            <h3>HeatMap</h3>
+          </a>
+          </div>
+
+          <a href="#upload">
+          <div class="feature-box col-lg-4">
+            <img class="fim" src="{{ url_for('static', filename='public/environment.jpeg') }}" alt="eto">
+            <h3>Weather Forecast</h3>
+          </a>
+          </div>
+
+          
+          <a href="#upload">
+          <div class="feature-box col-lg-4">
+            <img class="fim" src="{{ url_for('static', filename='public/prediction.jpeg') }}" alt="eto">
+            <h3>Statistics</h3>
+          </a>
+          </div>
+          
+        </div>
+      </div>
+
+  </section>
+
+
+
+
+  <!-- UPLOAD SECTION-->
+
+  <section id="upload">
+    <div class="upload-img">
+      <form  class="up-img" method="POST" enctype=multipart/form-data onsubmit="enableButtons()">
+        <input class="up-img" type="file" name='Upload' id ='Upload' accept=".zip" required onchange="validateFile()">
+        <p id="file-error">Drag your files here or click in this area.</p>
+        <!-- <input type="file"> -->
+        <button class="up-bt" type="submit" >Upload</button>
+      </form>
+
+    <div class="buttons">
+      <a href="heatmap"><button id="heatmap-btn" class="upload-btn" >HeatMap</button></a>
+      <a href="environment"><button id="env-btn" class="upload-btn" >Weather Forecast</button></a>
+      <a href="prediction"><button id="stats-btn" class="upload-btn" >Statistics</button></a>
+    </div>
+ </div>
+
+  </section>
+ 
+
+  <!-- Footer -->
+
+  <footer id="footer">
+    <h2>About Us</h2>
+    <h2 style="color: rgb(202, 243, 235) ; font-size: 70px; font-family: 'Courier New', Courier, monospace;">Our Team</h2>
+
+      <div class="rowb">
+        <div class="column">
+          <img  class="team-img" src="{{ url_for('static', filename='public/Namitha.jpeg') }}" alt="Snow" >
+          <h3>Namitha</h3>
+        </div>
+        <div class="column">
+          <img class="team-img" src="{{ url_for('static', filename='public/Samarth.jpeg') }}" alt="Forest" >
+          <h3>Samarth</h3>
+        </div>
+        <div class="column">
+          <img class="team-img" src="{{ url_for('static', filename='public/cia.jpeg') }}" alt="Mountains" >
+          <h3>     Cia Shetty   </h3>
+        </div>
+        <div class="column">
+          <img class="team-img" src="{{ url_for('static', filename='public/Bhavith.jpeg') }}" alt="Mountains" >
+          <h3>Bhavith</h3>
+        </div>
+      </div>   
+
+
+    <div class="finfo">
+      <a href="#title"><img class="logo1" src="{{ url_for('static', filename='public/AquaPlast_Logo.jpeg') }}" alt="logo"></a>
+      <h4 class="food">Fight against pollution!</h4>
+      <div class="innn">
+        <p class="opo">Preserve the Blue: Say No to Water Pollution</p>
+        <p class="opo">Pollution Ends Where Awareness Begins: Act Now </p>
+        <p class="opo">Purity Flows, Pollution Goes: Join the Movement</p>
+        <pre><p style="color: rgb(63, 199, 241);">#FlowWithoutPlastic    #PlasticDetoxWaves </p></pre>
+          
+      </div>
+      <div class="out">
+        <h4 class="gic">Get In Touch</h4>
+        <p class="opo">Questions or Feedback?</p>
+        <p class="opo">We'd Love to hear from you</p>
+        <a href="mailto:bhavithpbrao@gmail.com"><button type="button" class="btn btn-light btn-lg">E-mail Us<i class="fas fa-envelope fa-1x env"></i></button></a>
+      </div>
+    </div>  
+
+  </footer>
+
+
+</body>
+
 </html>

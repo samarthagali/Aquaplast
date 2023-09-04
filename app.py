@@ -1,4 +1,4 @@
-from flask import Flask,request,render_template
+from flask import Flask,request,render_template,flash,redirect, url_for
 import numpy as np
 import pandas as pd
 from warnings import filterwarnings
@@ -9,30 +9,17 @@ import zipfile
 from src.mergeGeotag import pipeline
 app=Flask(__name__)
 app.config['MAX_CONTENT_LENGTH']=1024*1024*1024
+app.config['SECRET_KEY']='bwahahaha'
+
 filterwarnings('ignore')
 
-# @app.route('/')
-# def index():
-#     return render_template('index.html')
 @app.route('/heatmap')
 def heatmap():
     return render_template('heatmap_plastic.html')
 
 @app.route('/login')
 def login():
-    return render_template('l-o-g-i-n.html')
-
-@app.route('/')
-def main():
-    return render_template('main.html')
-
-@app.route('/contact')
-def contact():
-    return render_template('c-o-n-t-a-c-t.html')
-
-@app.route('/signup')
-def signup():
-    return render_template('s-i-g-n-u-p.html')
+    return render_template('dex.html')
 
 @app.route('/environment')
 def environment():
@@ -43,14 +30,16 @@ def prediction():
     return render_template('predict-output.html')
 
 
-@app.route('/upload',methods=['GET','POST'])
+@app.route('/',methods=['GET','POST'])
 def predict_datapoint():
     if request.method=='GET':
-        return render_template('u-p-l-o-a-d.html')
+        print("GET")
+        return render_template('index.html')
     else:
         if 'Upload' not  in  request.files:
             return Flask.redirect(request.url)
-        file = request.files['Upload'] 
+        file = request.files['Upload']
+        print(file) 
         fname=file.filename.split(".")[0]
         file_like_object = file.stream._file
         print(file_like_object)
@@ -63,8 +52,9 @@ def predict_datapoint():
             # Extract the file to the specified directory
                     zip_ref.extract(file_info, path="data")
         print("extracted to data folder")
+        flash("Processing")
         pipeline(fname)
-        return render_template('u-p-l-o-a-d.html')
+        return redirect(url_for('predict_datapoint'))
+
 if __name__=="__main__":
     app.run(host="0.0.0.0",debug=True, port='5000')        
-

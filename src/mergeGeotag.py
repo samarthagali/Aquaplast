@@ -21,6 +21,7 @@ def pipeline(dirs):
     datetime="datetime_"+dirs+".csv"
     dirs=parent+dirs+"/"
     imgs=glob.glob(dirs+"*.jpg")
+    print(len(imgs))
     get_predict.write_to_csv(dirs,model,preds)
     getGeotag.write_to_csv(imgs,ops,geotag)
     getDatetime.write_to_csv(imgs,ops,datetime)

@@ -25,7 +25,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_a6113d3e7d6597aee6c0978231929665 {
+                #map_53c1da02d24f064a48ccce0870320a50 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -36,33 +36,37 @@
             </style>
         
     <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
 </head>
 <body>
     
     
-     <div style="position: fixed;
-                 bottom: 50px; left: 50px; width: 150px; height: 100px;
-                 border:2px solid grey; z-index:9999; font-size:14px;
-                 background-color: white;
-                 ">
-     &nbsp; Plastic Count Legend <br>
-     &nbsp; Low Plastic: &lt; 30.0 <i style="background:green;opacity:0.7;"></i><br>
-     &nbsp; High Plastic: &gt;= 30.0 <i style="background:red;opacity:0.7;"></i>
-      </div>
-     
+    <div style="position: fixed;
+                top: 10px; left: 10px; width: 150px; height: 100px;
+                border:2px solid grey; z-index:9999; font-size:14px;
+                background-color: white;
+                ">
+    &nbsp; Plastic Count Legend <br>
+    &nbsp; <div style="width: 20px; height: 20px; background-color: red; display: inline-block;border: 1px solid black; border-radius: 20px"></div> : High Plastic<br>
+    &nbsp; <div style="width: 20px; height: 20px; background-color: orange; display: inline-block;border: 1px solid black; border-radius: 20px"></div> : Mid Plastic<br>
+    &nbsp; <div style="width: 20px; height: 20px; background-color: green; display: inline-block;border: 1px solid black; border-radius: 20px"></div> : Low Plastic
+    </div>
     
-            <div class="folium-map" id="map_a6113d3e7d6597aee6c0978231929665" ></div>
+    
+            <div class="folium-map" id="map_53c1da02d24f064a48ccce0870320a50" ></div>
         
 </body>
 <script>
     
     
-            var map_a6113d3e7d6597aee6c0978231929665 = L.map(
-                "map_a6113d3e7d6597aee6c0978231929665",
+            var map_53c1da02d24f064a48ccce0870320a50 = L.map(
+                "map_53c1da02d24f064a48ccce0870320a50",
                 {
-                    center: [10.895901666666667, 106.69410816666668],
+                    center: [10.895909611111113, 106.69410333333333],
                     crs: L.CRS.EPSG3857,
-                    zoom: 10,
+                    zoom: 15,
                     zoomControl: true,
                     preferCanvas: false,
                 }
@@ -72,183 +76,451 @@
 
         
     
-            var tile_layer_affb5ff5fdb9e6af117a51d25ee394cc = L.tileLayer(
+            var tile_layer_3fa4e869d1d080cf53938845d3bcb39f = L.tileLayer(
                 "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            ).addTo(map_a6113d3e7d6597aee6c0978231929665);
+            ).addTo(map_53c1da02d24f064a48ccce0870320a50);
         
     
-            var tile_layer_affd6931a688ba01703260802bd88216 = L.tileLayer(
+            var tile_layer_2c79f7a4ab5c365c77eae18f2d0e9005 = L.tileLayer(
                 "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
                 {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            ).addTo(map_a6113d3e7d6597aee6c0978231929665);
+            ).addTo(map_53c1da02d24f064a48ccce0870320a50);
         
     
-            var tile_layer_252b050583fcacc4664592ad0532ce16 = L.tileLayer(
+            var tile_layer_07c439aea563a399baafabb7cbfa4c63 = L.tileLayer(
                 "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            ).addTo(map_a6113d3e7d6597aee6c0978231929665);
+            ).addTo(map_53c1da02d24f064a48ccce0870320a50);
         
     
-            var heat_map_a2351ff8ebce84da5b2e8ca6619358e8 = L.heatLayer(
-                [[10.895791666666666, 106.695335, 40], [10.895963333333333, 106.69390833333334, 22], [10.895878333333334, 106.693555, 24], [10.895793333333334, 106.69527166666668, 27], [10.895868333333333, 106.69363333333334, 20], [10.895973333333334, 106.693735, 31], [10.895928333333334, 106.69471833333331, 34], [10.895976666666666, 106.69356166666668, 22], [10.895866666666668, 106.69370166666668, 20], [10.895976666666666, 106.69366166666669, 20]],
+            var heat_map_ff3166102b1bad2e291902222afeb69b = L.heatLayer(
+                [[10.895956666666669, 106.69407, 25], [10.895943333333332, 106.69439833333334, 29], [10.895935, 106.694585, 17], [10.895856666666669, 106.69394333333334, 18], [10.89586, 106.69387, 13], [10.895901666666669, 106.69530333333331, 19], [10.89579, 106.69535666666668, 20], [10.895963333333333, 106.69391333333331, 14], [10.895958333333333, 106.69402333333332, 15], [10.895941666666667, 106.69440333333333, 31], [10.895796666666667, 106.69533166666666, 9], [10.89597, 106.69374833333332, 20], [10.895886666666666, 106.69538666666666, 15], [10.895853333333331, 106.69394833333334, 16], [10.895858333333331, 106.693865, 24], [10.895861666666669, 106.69379333333332, 28], [10.895975, 106.69373333333333, 16], [10.89597, 106.69382333333331, 44], [10.89587, 106.69363, 14], [10.895876666666666, 106.69355666666668, 26], [10.895978333333334, 106.69365, 15], [10.895861666666669, 106.69379166666668, 37], [10.895866666666668, 106.6937, 24], [10.895973333333334, 106.693735, 26], [10.89597, 106.69382666666668, 27], [10.895978333333334, 106.69366666666669, 37], [10.895886666666666, 106.69355333333333, 14], [10.895978333333334, 106.69356333333332, 18], [10.895861666666669, 106.693785, 24], [10.895908333333333, 106.695145, 20]],
                 {"blur": 15, "maxZoom": 18, "minOpacity": 0.5, "radius": 25}
-            ).addTo(map_a6113d3e7d6597aee6c0978231929665);
+            ).addTo(map_53c1da02d24f064a48ccce0870320a50);
         
     
-            var layer_control_5880fc7768e882ff602ddb3aa3a80b25 = {
-                base_layers : {
-                    "openstreetmap" : tile_layer_252b050583fcacc4664592ad0532ce16,
-                    "cartodbpositron" : tile_layer_affd6931a688ba01703260802bd88216,
-                },
-                overlays :  {
-                    "macro_element_a2351ff8ebce84da5b2e8ca6619358e8" : heat_map_a2351ff8ebce84da5b2e8ca6619358e8,
-                },
-            };
-            L.control.layers(
-                layer_control_5880fc7768e882ff602ddb3aa3a80b25.base_layers,
-                layer_control_5880fc7768e882ff602ddb3aa3a80b25.overlays,
-                {"autoZIndex": true, "collapsed": true, "position": "topright"}
-            ).addTo(map_a6113d3e7d6597aee6c0978231929665);
-            tile_layer_affd6931a688ba01703260802bd88216.remove();
-            tile_layer_252b050583fcacc4664592ad0532ce16.remove();
-        
-    
-            var marker_b9ec085879f1b48056f9aaebf0686cee = L.marker(
-                [10.895791666666666, 106.695335],
+            var marker_cluster_51e1dd5678f08e3c7a6a64a64146f37c = L.markerClusterGroup(
                 {}
-            ).addTo(map_a6113d3e7d6597aee6c0978231929665);
+            );
+            map_53c1da02d24f064a48ccce0870320a50.addLayer(marker_cluster_51e1dd5678f08e3c7a6a64a64146f37c);
         
     
-            marker_b9ec085879f1b48056f9aaebf0686cee.bindTooltip(
+            var marker_7fe4c02f815fca0047dfcbc75c553581 = L.marker(
+                [10.895956666666669, 106.69407],
+                {}
+            ).addTo(marker_cluster_51e1dd5678f08e3c7a6a64a64146f37c);
+        
+    
+            marker_7fe4c02f815fca0047dfcbc75c553581.bindTooltip(
                 `<div>
-                     Plastic Count: 40, Color: High Plastic
+                     Plastic Count: 25
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_8d167ad2fcf25cba65166a56296832f4 = L.marker(
-                [10.895963333333333, 106.69390833333334],
+            var marker_1dbf4adb5c935c5f2e1006374d3c9caa = L.marker(
+                [10.895943333333332, 106.69439833333334],
                 {}
-            ).addTo(map_a6113d3e7d6597aee6c0978231929665);
+            ).addTo(marker_cluster_51e1dd5678f08e3c7a6a64a64146f37c);
         
     
-            marker_8d167ad2fcf25cba65166a56296832f4.bindTooltip(
+            marker_1dbf4adb5c935c5f2e1006374d3c9caa.bindTooltip(
                 `<div>
-                     Plastic Count: 22, Color: Low Plastic
+                     Plastic Count: 29
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_f095635d860ee71395cc9bed8104c7b9 = L.marker(
-                [10.895878333333334, 106.693555],
+            var marker_3fadac5edee770b7b3cb3fada1b29c89 = L.marker(
+                [10.895935, 106.694585],
                 {}
-            ).addTo(map_a6113d3e7d6597aee6c0978231929665);
+            ).addTo(marker_cluster_51e1dd5678f08e3c7a6a64a64146f37c);
         
     
-            marker_f095635d860ee71395cc9bed8104c7b9.bindTooltip(
+            marker_3fadac5edee770b7b3cb3fada1b29c89.bindTooltip(
                 `<div>
-                     Plastic Count: 24, Color: Low Plastic
+                     Plastic Count: 17
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_3d5c715ee15b76065370d2030129e466 = L.marker(
-                [10.895793333333334, 106.69527166666668],
+            var marker_d2b07e1a081a2a4eb792c0c2252d4f1e = L.marker(
+                [10.895856666666669, 106.69394333333334],
                 {}
-            ).addTo(map_a6113d3e7d6597aee6c0978231929665);
+            ).addTo(marker_cluster_51e1dd5678f08e3c7a6a64a64146f37c);
         
     
-            marker_3d5c715ee15b76065370d2030129e466.bindTooltip(
+            marker_d2b07e1a081a2a4eb792c0c2252d4f1e.bindTooltip(
                 `<div>
-                     Plastic Count: 27, Color: Low Plastic
+                     Plastic Count: 18
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_3bcd6e122f123801cc4fbe3a1480d948 = L.marker(
-                [10.895868333333333, 106.69363333333334],
+            var marker_424e62b341b783804b78b90f1be870dc = L.marker(
+                [10.89586, 106.69387],
                 {}
-            ).addTo(map_a6113d3e7d6597aee6c0978231929665);
+            ).addTo(marker_cluster_51e1dd5678f08e3c7a6a64a64146f37c);
         
     
-            marker_3bcd6e122f123801cc4fbe3a1480d948.bindTooltip(
+            marker_424e62b341b783804b78b90f1be870dc.bindTooltip(
                 `<div>
-                     Plastic Count: 20, Color: Low Plastic
+                     Plastic Count: 13
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_ba683ccb0fc60fa6e6be6e897b81100f = L.marker(
+            var marker_dfa6dbec5ffb09bd084f3c94d30d9cb6 = L.marker(
+                [10.895901666666669, 106.69530333333331],
+                {}
+            ).addTo(marker_cluster_51e1dd5678f08e3c7a6a64a64146f37c);
+        
+    
+            marker_dfa6dbec5ffb09bd084f3c94d30d9cb6.bindTooltip(
+                `<div>
+                     Plastic Count: 19
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_bad903f621dee569aafa10d4bd65b877 = L.marker(
+                [10.89579, 106.69535666666668],
+                {}
+            ).addTo(marker_cluster_51e1dd5678f08e3c7a6a64a64146f37c);
+        
+    
+            marker_bad903f621dee569aafa10d4bd65b877.bindTooltip(
+                `<div>
+                     Plastic Count: 20
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_db57d06a74a5c8e3c73c43c5d464f7e0 = L.marker(
+                [10.895963333333333, 106.69391333333331],
+                {}
+            ).addTo(marker_cluster_51e1dd5678f08e3c7a6a64a64146f37c);
+        
+    
+            marker_db57d06a74a5c8e3c73c43c5d464f7e0.bindTooltip(
+                `<div>
+                     Plastic Count: 14
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ab1fbdf66c3b39f41b3686386246ab82 = L.marker(
+                [10.895958333333333, 106.69402333333332],
+                {}
+            ).addTo(marker_cluster_51e1dd5678f08e3c7a6a64a64146f37c);
+        
+    
+            marker_ab1fbdf66c3b39f41b3686386246ab82.bindTooltip(
+                `<div>
+                     Plastic Count: 15
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ed017b075affc6a33344bd92e5b8f50a = L.marker(
+                [10.895941666666667, 106.69440333333333],
+                {}
+            ).addTo(marker_cluster_51e1dd5678f08e3c7a6a64a64146f37c);
+        
+    
+            marker_ed017b075affc6a33344bd92e5b8f50a.bindTooltip(
+                `<div>
+                     Plastic Count: 31
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4da1cce1c69593878f859c791c877150 = L.marker(
+                [10.895796666666667, 106.69533166666666],
+                {}
+            ).addTo(marker_cluster_51e1dd5678f08e3c7a6a64a64146f37c);
+        
+    
+            marker_4da1cce1c69593878f859c791c877150.bindTooltip(
+                `<div>
+                     Plastic Count: 9
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_774415f3f8a29e3bfb693f3232dfdc3a = L.marker(
+                [10.89597, 106.69374833333332],
+                {}
+            ).addTo(marker_cluster_51e1dd5678f08e3c7a6a64a64146f37c);
+        
+    
+            marker_774415f3f8a29e3bfb693f3232dfdc3a.bindTooltip(
+                `<div>
+                     Plastic Count: 20
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1cfcb86a5a61ec8db02b5046cc79013a = L.marker(
+                [10.895886666666666, 106.69538666666666],
+                {}
+            ).addTo(marker_cluster_51e1dd5678f08e3c7a6a64a64146f37c);
+        
+    
+            marker_1cfcb86a5a61ec8db02b5046cc79013a.bindTooltip(
+                `<div>
+                     Plastic Count: 15
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a6295fe55ea14cbe0e0ea3c682ec061b = L.marker(
+                [10.895853333333331, 106.69394833333334],
+                {}
+            ).addTo(marker_cluster_51e1dd5678f08e3c7a6a64a64146f37c);
+        
+    
+            marker_a6295fe55ea14cbe0e0ea3c682ec061b.bindTooltip(
+                `<div>
+                     Plastic Count: 16
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_154ed9857db13f7a28a85c50af49e90e = L.marker(
+                [10.895858333333331, 106.693865],
+                {}
+            ).addTo(marker_cluster_51e1dd5678f08e3c7a6a64a64146f37c);
+        
+    
+            marker_154ed9857db13f7a28a85c50af49e90e.bindTooltip(
+                `<div>
+                     Plastic Count: 24
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_66327b205aa6e167fa1bf61480166a00 = L.marker(
+                [10.895861666666669, 106.69379333333332],
+                {}
+            ).addTo(marker_cluster_51e1dd5678f08e3c7a6a64a64146f37c);
+        
+    
+            marker_66327b205aa6e167fa1bf61480166a00.bindTooltip(
+                `<div>
+                     Plastic Count: 28
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a0698bfa0fd1458e010e533b879e3bca = L.marker(
+                [10.895975, 106.69373333333333],
+                {}
+            ).addTo(marker_cluster_51e1dd5678f08e3c7a6a64a64146f37c);
+        
+    
+            marker_a0698bfa0fd1458e010e533b879e3bca.bindTooltip(
+                `<div>
+                     Plastic Count: 16
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fd1f38a4f308549866a3fc567e0ba88a = L.marker(
+                [10.89597, 106.69382333333331],
+                {}
+            ).addTo(marker_cluster_51e1dd5678f08e3c7a6a64a64146f37c);
+        
+    
+            marker_fd1f38a4f308549866a3fc567e0ba88a.bindTooltip(
+                `<div>
+                     Plastic Count: 44
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1edb8142dbcd385aec4bb659a4abaafa = L.marker(
+                [10.89587, 106.69363],
+                {}
+            ).addTo(marker_cluster_51e1dd5678f08e3c7a6a64a64146f37c);
+        
+    
+            marker_1edb8142dbcd385aec4bb659a4abaafa.bindTooltip(
+                `<div>
+                     Plastic Count: 14
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e75e5ae29cf599e9c8bfe13cfcef359a = L.marker(
+                [10.895876666666666, 106.69355666666668],
+                {}
+            ).addTo(marker_cluster_51e1dd5678f08e3c7a6a64a64146f37c);
+        
+    
+            marker_e75e5ae29cf599e9c8bfe13cfcef359a.bindTooltip(
+                `<div>
+                     Plastic Count: 26
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d6601bd11b094060f96da2e529e308d7 = L.marker(
+                [10.895978333333334, 106.69365],
+                {}
+            ).addTo(marker_cluster_51e1dd5678f08e3c7a6a64a64146f37c);
+        
+    
+            marker_d6601bd11b094060f96da2e529e308d7.bindTooltip(
+                `<div>
+                     Plastic Count: 15
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7a16220021be80b11e1038da9e7a948f = L.marker(
+                [10.895861666666669, 106.69379166666668],
+                {}
+            ).addTo(marker_cluster_51e1dd5678f08e3c7a6a64a64146f37c);
+        
+    
+            marker_7a16220021be80b11e1038da9e7a948f.bindTooltip(
+                `<div>
+                     Plastic Count: 37
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7277a40e471764da713e51d6044e045c = L.marker(
+                [10.895866666666668, 106.6937],
+                {}
+            ).addTo(marker_cluster_51e1dd5678f08e3c7a6a64a64146f37c);
+        
+    
+            marker_7277a40e471764da713e51d6044e045c.bindTooltip(
+                `<div>
+                     Plastic Count: 24
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_29e458428473c3c99098c924fa6d75ee = L.marker(
                 [10.895973333333334, 106.693735],
                 {}
-            ).addTo(map_a6113d3e7d6597aee6c0978231929665);
+            ).addTo(marker_cluster_51e1dd5678f08e3c7a6a64a64146f37c);
         
     
-            marker_ba683ccb0fc60fa6e6be6e897b81100f.bindTooltip(
+            marker_29e458428473c3c99098c924fa6d75ee.bindTooltip(
                 `<div>
-                     Plastic Count: 31, Color: High Plastic
+                     Plastic Count: 26
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_e56b032bb09a29b0b4fb24cb7355a5e6 = L.marker(
-                [10.895928333333334, 106.69471833333331],
+            var marker_9dd1c44e4e443eeffec83512551f41af = L.marker(
+                [10.89597, 106.69382666666668],
                 {}
-            ).addTo(map_a6113d3e7d6597aee6c0978231929665);
+            ).addTo(marker_cluster_51e1dd5678f08e3c7a6a64a64146f37c);
         
     
-            marker_e56b032bb09a29b0b4fb24cb7355a5e6.bindTooltip(
+            marker_9dd1c44e4e443eeffec83512551f41af.bindTooltip(
                 `<div>
-                     Plastic Count: 34, Color: High Plastic
+                     Plastic Count: 27
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_8f27b154621b3752be31db6e260d1dc2 = L.marker(
-                [10.895976666666666, 106.69356166666668],
+            var marker_7528814b7e75e180e0e1fbc6cae18920 = L.marker(
+                [10.895978333333334, 106.69366666666669],
                 {}
-            ).addTo(map_a6113d3e7d6597aee6c0978231929665);
+            ).addTo(marker_cluster_51e1dd5678f08e3c7a6a64a64146f37c);
         
     
-            marker_8f27b154621b3752be31db6e260d1dc2.bindTooltip(
+            marker_7528814b7e75e180e0e1fbc6cae18920.bindTooltip(
                 `<div>
-                     Plastic Count: 22, Color: Low Plastic
+                     Plastic Count: 37
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_f57174158b437e1a2f169477a7cc5b15 = L.marker(
-                [10.895866666666668, 106.69370166666668],
+            var marker_ac54a8b2b401406645170f3a41b8e1c2 = L.marker(
+                [10.895886666666666, 106.69355333333333],
                 {}
-            ).addTo(map_a6113d3e7d6597aee6c0978231929665);
+            ).addTo(marker_cluster_51e1dd5678f08e3c7a6a64a64146f37c);
         
     
-            marker_f57174158b437e1a2f169477a7cc5b15.bindTooltip(
+            marker_ac54a8b2b401406645170f3a41b8e1c2.bindTooltip(
                 `<div>
-                     Plastic Count: 20, Color: Low Plastic
+                     Plastic Count: 14
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_89d3196c2cd7d1375c74e2b66dc3cfc0 = L.marker(
-                [10.895976666666666, 106.69366166666669],
+            var marker_e783fca44cfd48bb26818354ff3639c7 = L.marker(
+                [10.895978333333334, 106.69356333333332],
                 {}
-            ).addTo(map_a6113d3e7d6597aee6c0978231929665);
+            ).addTo(marker_cluster_51e1dd5678f08e3c7a6a64a64146f37c);
         
     
-            marker_89d3196c2cd7d1375c74e2b66dc3cfc0.bindTooltip(
+            marker_e783fca44cfd48bb26818354ff3639c7.bindTooltip(
                 `<div>
-                     Plastic Count: 20, Color: Low Plastic
+                     Plastic Count: 18
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6070cd6cf8ab6cf43889980e01727feb = L.marker(
+                [10.895861666666669, 106.693785],
+                {}
+            ).addTo(marker_cluster_51e1dd5678f08e3c7a6a64a64146f37c);
+        
+    
+            marker_6070cd6cf8ab6cf43889980e01727feb.bindTooltip(
+                `<div>
+                     Plastic Count: 24
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b118a92c0390d1f2285e7e818ed8bb00 = L.marker(
+                [10.895908333333333, 106.695145],
+                {}
+            ).addTo(marker_cluster_51e1dd5678f08e3c7a6a64a64146f37c);
+        
+    
+            marker_b118a92c0390d1f2285e7e818ed8bb00.bindTooltip(
+                `<div>
+                     Plastic Count: 20
                  </div>`,
                 {"sticky": true}
             );

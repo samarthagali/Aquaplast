@@ -3,14 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Predict Output</title>
+    <title>Statistics on Plastic Levels</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/predict-output.css') }}">
+    <script>
+        function changeGraph(){
+            const graph= document.getElementById('graph-select');
+            const img= document.getElementById('graph-img');
+            const graph_value=graph.value;
+            if(graph_value=="daily"){
+                img.src="{{ url_for('static', filename='public/graphs_daily.png') }}";
+            }
+            else if(graph_value=="monthly"){
+                img.src="{{ url_for('static', filename='public/graphs_monthly.png') }}";
+                img.style="width=70%";
+            }
+            else if(graph_value=="yearly"){
+                img.src="{{ url_for('static', filename='public/graphs_yearly.png') }}"
+                img.style="width=70%";
+            }
+            else{
+                img.src="{{ url_for('static', filename='public/graphs.png') }}"
+            }
+            
+        }
+    </script>
 </head>
 <body>
+    <nav>
     <div class="title"><h1>Predicted Output</h1></div>
-    <b class="back" id="bACKText"><a href="upload">BACK</a></b>
+    <!-- <a class="navbar-brand" href=""><img class="logo" src="AquaPlast_Logo.jpeg" alt="logo"></a>
+    </nav> -->
+    <!-- <b class="back" id="bACKText"><a href="{{ url_for('predict_datapoint') }}">BACK</a></b> -->
+    <div class="back" id="bACKText"><a href="{{url_for('predict_datapoint')}}"><img class="logo" src="{{ url_for('static', filename='public/AquaPlast_Logo.jpeg') }}" alt="logo"></a></div>
+
+    <h2><p>
+        Plastic Level Statistics on Daily, Monthly and Yearly basis 
+    </p></h2>
+    <form id="form1">
+        <select name="graph-select" id="graph-select" class="select" width=300 style="width: 550px; height: 40px;" onchange="changeGraph()">
+            <option value='daily'>Daily</option>
+            <option value='monthly'>Monthly</option>
+            <option value='yearly'>Yearly</option>
+            <option value='All' selected>All</option>
+        </select>
+    </form>
+
+
     <div class="img-output">
-        <img src="{{ url_for('static', filename='public/graphs.png') }}" alt="Predicted Output">
+        <img id="graph-img" src="{{ url_for('static', filename='public/graphs.png') }}" alt="Predicted Output">
+        <!-- <img src="{{ url_for('static', filename='graphs.png') }}" alt="Predicted Output"> -->
+        <!-- <img src="graphs.png" alt="Predicted Output"> -->
     </div>
 </body>
 </html>

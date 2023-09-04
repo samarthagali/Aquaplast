@@ -1,0 +1,65 @@
+.title{
+    text-align: center;
+    color: lightgray;
+    font-size: 25px;
+}
+
+.logo{
+    height: 75px;
+    width: 75px;
+    border-radius: 15px;
+
+  }
+
+  h1{
+    font-family: 'Phudu', cursive;
+    
+    text-align: center;
+    font-size: 3rem;
+  }
+
+  h2{
+    font-family: 'Helvetica';
+    text-align: center;
+    font-size: 3rem;
+  }
+
+.col-md-6{
+  font-family: 'Special Elite', cursive;
+  margin:auto;
+  width:50%;
+}
+
+.img-output{
+    text-align: center;
+    border: 5px solid;
+    border-radius: 10px;
+  
+}
+
+.div1
+{
+  display:flex;
+  margin:auto;
+  width:50%;
+
+}
+
+body{
+    background-image: url("../public/weather_bg.jpg");
+    
+}
+
+img{
+    opacity:0.95;
+}
+
+.back{
+    position: absolute;
+  top: 803px;
+  left: 607px;
+  left: 1073px;
+  top: 4.2%;
+  left: 91.46%;
+  cursor: pointer;
+}

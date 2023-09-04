@@ -1,13 +1,48 @@
 .title{
     text-align: center;
-    color: lightgreen;
+    color: lightgray;
     font-size: 25px;
 }
 
+.logo{
+    height: 75px;
+    width: 75px;
+    border-radius: 15px;
+
+  }
+
+  h2{
+    font-family: 'Shadows Into Light', cursive;
+    color: rgb(247, 248, 236);
+    text-align: center;
+    font-size: 3rem;
+  }
+
 .img-output{
     text-align: center;
-    border: 5px solid lightgreen;
+    border: 5px solid;
     border-radius: 10px;
+    
+}
+
+body{
+    background-image: url("../public/predict-background.jpg");
+    
+}
+
+img{
+    opacity:0.95;
+    width:70%;
+}
+
+.select option {
+    font-size: 16px; 
+}
+#form1 {
+    text-align: center;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    
 }
 
 .back{
